@@ -2,6 +2,7 @@ body{
     font-family: "Crimson Text", serif;
     background-color: #F2FFFC;
     font-size: 120%;
+    line-height:1.5;
 }
 
 main h1 {
@@ -9,18 +10,29 @@ main h1 {
     text-align: center;
     color: #FFF;
     background-color: #851944;
+    padding: 25px;
+    margin:0;
+    border:10px solid #000;
+    font-size:60px;
 }
 
 h1, h2 {
     font-family: "Open Sans Condensed", sans-serif;
+    font-size:30px;
 }
 
 p {
    text-align: justify;
+   margin:20px 0;
 }
 
 blockquote{
     background-color: #D9E5E3;
+    border:10px solid #C2CCCA;
+    margin:20px 40px;
+    width:250px;
+    box-sizing:border-box;
+    
 }
 
 aside{
@@ -35,13 +47,56 @@ footer{
 
 nav a {
     color: #F2FFFC;
+    text-decoration:none;
 }
 
 main a {
     color: #851944;
+    text-decoration:none;
 }
 
 aside a{
     color: inherit;
     font-family: "Opens Sans Condensed", sans-serif;
+    text-decoration:none;
+}
+
+blockquote, aside, footer {
+    padding: 20px;
+}
+
+h1 {
+    padding: 24px;
+}
+
+aside h1 {
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+div {
+    width:720px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+main div {
+    padding:30px 0;
+}
+
+strong {
+    font-weight:bold;
+}
+
+em {
+    font-weight:italic;
+}
+
+main footer {
+    color: #000;
+    background-color: #F2FFFC;
+}
+
+aside li {
+    display: inline-block;
 }

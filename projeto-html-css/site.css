@@ -5,7 +5,20 @@ body{
     line-height:1.5;
 }
 
-main h1 {
+main {
+    width:85%;
+    float:left;
+}
+
+.minha-foto,.navegacao-site {
+    width:15%;
+    float:right;
+    box-sizing:border-box;
+    border-left:10px solid #000;
+    border-right:10px solid black;
+}
+
+.titulo-principal {
     font-family: "Open Sans Condensed", sans-serif;
     text-align: center;
     color: #FFF;
@@ -14,11 +27,16 @@ main h1 {
     margin:0;
     border:10px solid #000;
     font-size:60px;
+    text-transform:uppercase;
 }
 
 h1, h2 {
     font-family: "Open Sans Condensed", sans-serif;
     font-size:30px;
+}
+
+.subtitulo-texto {
+  clear:both;
 }
 
 p {
@@ -32,22 +50,21 @@ blockquote{
     margin:20px 40px;
     width:250px;
     box-sizing:border-box;
+    padding:20px;
     
 }
 
-aside{
-    background-color: #3C1D3D;
-    color: #F2FFFC;
-}
 
-footer{
+#rodape-pagina{
     background-color: #000;
     color: #F2FFFC;
+    padding: 20px;
 }
 
 nav a {
     color: #F2FFFC;
     text-decoration:none;
+    text-transform:lowercase;
 }
 
 main a {
@@ -61,26 +78,15 @@ aside a{
     text-decoration:none;
 }
 
-blockquote, aside, footer {
-    padding: 20px;
-}
-
-h1 {
-    padding: 24px;
-}
-
 aside h1 {
     font-size:30px;
     margin-bottom:25px;
 }
 
-div {
+.texto-principal {
     width:720px;
     margin-left:auto;
     margin-right:auto;
-}
-
-main div {
     padding:30px 0;
 }
 
@@ -92,11 +98,64 @@ em {
     font-weight:italic;
 }
 
-main footer {
-    color: #000;
-    background-color: #F2FFFC;
+.redes-sociais li{
+    display:inline-block;
 }
 
-aside li {
-    display: inline-block;
+.redes-sociais a{
+    width:40px;
+    height:40px;
+    display:inline-block;
+    text-indent:-99999px;
+}
+
+.github {
+    background-image:url(github.png);
+}
+
+.twitter {
+    background-image:url(twitter.png);
+}
+
+.linkedin {
+    background-image:url(linkedin.png);
+}
+
+article {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.navegacao-site {
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    padding: 20px;
+    text-align: center;
+}
+
+.leia-mais {
+    font-size:25px;
+    margin:16px;
+    display:block;
+    background-color:#E6E7E8
+    text-align:center;
+    padding:8px;
+}
+
+.fiat {
+    float:right;
+}
+
+.petrobras {
+    float:left;
+}
+
+cite {
+    font-style: italic;
+    float: right;
+}
+
+.clear-fix {
+    clear:both;
 }

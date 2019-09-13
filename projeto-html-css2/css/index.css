@@ -1,3 +1,85 @@
+header {
+    position: relative;
+}
+
+.palavra-home {
+    position:absolute;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #D5447E;
+}
+
+.eficiencia {
+    top: 18%;
+    left: 63%
+}
+.boas-praticas {
+    top: 10%;
+    right: 78%;
+}
+.codigo-limpo {
+    top: 8%;
+    right: 5%;
+}
+.css3 {
+    top: 70%;
+    right: 90%;
+}
+.html5 {
+    top: 56%;
+    right: 7%;
+}
+.javascript {
+    bottom: 60%;
+    left: 29%;
+}
+.acessibilidade {
+    bottom: 92%;
+    right: 22%;
+}
+.responsivo {
+    top: 3%;
+    left: 5%
+}
+.otimizacoes {
+    top: 46%;
+    left: 10%;
+}
+.agilidade {
+    top: 80%;
+    right: 17%;
+}
+.design {
+    top: 39%;
+    right: 26%;
+}
+
+.blog {
+    position: relative;
+}
+
+.blog .inicio-post {
+    position: absolute;
+    top: 4em;
+    height: 8em;
+    left: 30%;
+    right: 4em;
+    background-color: #F2FFFC;
+    color: #000;
+    padding: 1.5em;
+}
+.blog .mais-recente {
+    background-color: #F2FFFC;
+}
+.blog .mais-recente a {
+    color: #F26;
+}
+
+.blog li {
+    width: 30%;
+}
+
 .foto-home {
     height: 200px;
 }

@@ -3,9 +3,19 @@
     object-position: 0 80%;
     height: 400px;
 }
+
 .imagem-carrossel-dois {
     object-fit: cover;
     height: 400px;
+}
+
+.img-card-posicao {
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-largura {
+    max-width: 18em;
 }
 
 .fonte-titulo {

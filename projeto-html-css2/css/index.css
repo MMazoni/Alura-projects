@@ -12,47 +12,69 @@ header {
 
 .eficiencia {
     top: 18%;
-    left: 63%
+    left: 63%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
 }
 .boas-praticas {
     top: 10%;
     right: 78%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
 }
 .codigo-limpo {
     top: 8%;
     right: 5%;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
 }
 .css3 {
     top: 70%;
     right: 90%;
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
 }
 .html5 {
     top: 56%;
     right: 7%;
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
 }
 .javascript {
     bottom: 60%;
     left: 29%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
 }
 .acessibilidade {
     bottom: 92%;
     right: 22%;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
 }
 .responsivo {
     top: 3%;
-    left: 5%
+    left: 5%;
+    -webkit-transform: rotate(-7deg);
+            transform: rotate(-7deg);
 }
 .otimizacoes {
     top: 46%;
     left: 10%;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
 }
 .agilidade {
     top: 80%;
     right: 17%;
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
 }
 .design {
     top: 39%;
     right: 26%;
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
 }
 
 .blog {

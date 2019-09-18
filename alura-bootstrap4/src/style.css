@@ -26,6 +26,10 @@
     color: darkred;
 }
 
+#cor-titulo {
+    color: #8D0606;
+}
+
 .botao-cor-especial {
     background-color: darkred;
     color: #FFF;

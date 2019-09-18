@@ -13,8 +13,9 @@ header {
 .eficiencia {
     top: 18%;
     left: 63%;
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
+    transform: translateX(10px) rotate(45deg) scale(1.0);
+    /*-webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);*/
 }
 .boas-praticas {
     top: 10%;
@@ -77,6 +78,28 @@ header {
             transform: rotate(-6deg);
 }
 
+.banner-twitter {
+    width: 14em;
+    line-height: 1;
+    padding: 1em 0;
+    box-sizing: border-box;
+
+    text-align: center;
+    text-decoration: none;
+    background-color: #3C1D3D;
+    color: white;
+    border: .25em solid black;
+
+    font-size: 1em;
+    font-family: "Open Sans Condensed", sans-serif;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: 0 0;
+    transform: translate(6.5754em, -2.4749em) rotate(45deg);
+}
+
 .blog {
     position: relative;
 }
@@ -130,6 +153,8 @@ header {
 .saudacao em {
     font-size: 4em;
     color: #851944;
+    transform: rotate(-5deg) skew(-10deg);
+    display: inline-block;
 }
 .botao-index {
     background-color: #851944;

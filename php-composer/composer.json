@@ -1,0 +1,10 @@
+{
+    "name": "mmazoni/buscador-curso",
+    "description": "Projeto que busca curso os cursos no site da Alura",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/dom-crawler": "^4.2",
+        "symfony/css-selector": "^4.3"
+    }
+}

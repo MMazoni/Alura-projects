@@ -1,5 +1,5 @@
 <?php
-    require_once 'classes/Categoria.php';
+    require_once 'global.php';
     require_once 'cabecalho.php';
 
     $id = $_GET['id'];

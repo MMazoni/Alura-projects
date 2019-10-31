@@ -1,9 +1,13 @@
 <?php
     require_once 'global.php';
-    require_once 'cabecalho.php';
 
+try {
     $id = $_GET['id'];
     $categoria = new Categoria($id);
+} catch (Exception $e) {
+    Erro::trataErro($e);
+}
+    require_once 'cabecalho.php';
 ?>
 <div class="row">
     <div class="col-md-12">

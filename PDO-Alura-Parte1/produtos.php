@@ -1,3 +1,11 @@
+<?php require_once 'global.php' ?>
+<?php 
+try {
+    $lista = Produto::listar();
+} catch (Exception $e) {
+    Erro::trataErro ($e);
+}
+?>
 <?php require_once 'cabecalho.php' ?>
 <div class="row">
     <div class="col-md-12">
@@ -7,12 +15,13 @@
 
 <div class="row">
     <div class="col-md-4">
-        <a href="produtos-criar.php" class="btn btn-info btn-block">Crair Novo Produto</a>
+        <a href="produtos-criar.php" class="btn btn-info btn-block">Criar Novo Produto</a>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
+        <?php if (count($lista) > 0): ?>
         <table class="table">
             <thead>
             <tr>
@@ -26,17 +35,22 @@
             </tr>
             </thead>
             <tbody>
+                <?php foreach ($lista as $linha) : ?>
                 <tr>
-                    <td>1</td>
-                    <td>O Senhor dos Aneis</td>
-                    <td>R$ 80,55</td>
-                    <td>2</td>
-                    <td>Livros</td>
-                    <td><a href="/produtos-editar.php" class="btn btn-info">Editar</a></td>
-                    <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                    <td><?= $linha['id'] ?></td>
+                    <td><?= $linha['nome'] ?></td>
+                    <td>R$ <?= $linha['preco'] ?></td>
+                    <td><?= $linha['quantidade'] ?></td>
+                    <td><?= $linha['categoria_nome'] ?></td>
+                    <td><a href="/produtos-editar.php?id="<?= $linha['id'] ?> class="btn btn-info">Editar</a></td>
+                    <td><a href="/produtos-excluir-post.php?id="<?= $linha['id'] ?> class="btn btn-danger">Excluir</a></td>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
+<?php else: ?>
+<p>Nenhum produto cadastrado.</p>
+<?php endif ?>
     </div>
 </div>
 <?php require_once 'rodape.php' ?>

@@ -1,3 +1,11 @@
+<?php require_once 'global.php' ?>
+<?php
+try {
+    $lista = Categoria::listar();
+} catch(Exception $e) {
+    Erro::trataErro($e);
+}
+?>
 <?php require_once 'cabecalho.php' ?>
 <div class="row">
     <div class="col-md-12">
@@ -10,19 +18,19 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="form-group">
                 <label for="nome">Nome do Produto</label>
-                <input type="text" value="O Senhor dos Aneis" class="form-control" placeholder="Nome do Produto" required>
+                <input type="text" name="nome" value="O Senhor dos Aneis" class="form-control" placeholder="Nome do Produto" required>
             </div>
             <div class="form-group">
                 <label for="preco">Preço da Produto</label>
-                <input type="number" value="88.55" step="0.01" min="0" class="form-control" placeholder="Preço do Produto" required>
+                <input type="number" name="preco" value="88.55" step="0.01" min="0" class="form-control" placeholder="Preço do Produto" required>
             </div>
             <div class="form-group">
                 <label for="quantidade">Quantidade do Produto</label>
-                <input type="number" value="8" min="0" class="form-control" placeholder="Quantidade do Produto" required>
+                <input type="number" name="quantidade" value="8" min="0" class="form-control" placeholder="Quantidade do Produto" required>
             </div>
             <div class="form-group">
                 <label for="nome">Categoria do Produto</label>
-                <select class="form-control">
+                <select name="categoria_id" class="form-control">
                     <option value="1" selected>Livros</option>
                     <option value="1">Revistas</option>
                 </select>

@@ -42,8 +42,8 @@ try {
                     <td>R$ <?= $linha['preco'] ?></td>
                     <td><?= $linha['quantidade'] ?></td>
                     <td><?= $linha['categoria_nome'] ?></td>
-                    <td><a href="/produtos-editar.php?id="<?= $linha['id'] ?> class="btn btn-info">Editar</a></td>
-                    <td><a href="/produtos-excluir-post.php?id="<?= $linha['id'] ?> class="btn btn-danger">Excluir</a></td>
+                    <td><a href="/produtos-editar.php?id=<?= $linha['id'] ?>" class="btn btn-info">Editar</a></td>
+                    <td><a href="/produtos-excluir-post.php?id=<?= $linha['id'] ?>" class="btn btn-danger">Excluir</a></td>
                 </tr>
                 <?php endforeach ?>
             </tbody>

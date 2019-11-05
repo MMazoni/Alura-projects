@@ -6,6 +6,7 @@ class Categoria
 
     public $id;
     public $nome;
+    public $produtos;
 
     public function __construct($id = false) {
         if ($id) {
@@ -25,7 +26,7 @@ class Categoria
 
     public function inserir()
     {
-        $query = "INSERT INTO categorias (nome) VALUES (':nome')";
+        $query = "INSERT INTO categorias (nome) VALUES (:nome)";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':nome', $this->nome);
@@ -55,10 +56,16 @@ class Categoria
 
     public function atualizar()
     {
-        $query = "UPDATE categorias set nome = '" . $this->nome . "' WHERE id = :id";
+        $query = "UPDATE categorias set nome = :nome WHERE id = :id";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
+        $stmt->bindValue(':nome', $this->nome);
         $stmt->bindValue(':id', $this->id);
         $stmt->execute();
+    }
+
+    public function carregarProdutos()
+    {
+        $this->produtos = Produto::listarPorCategoria($this->id);
     }
 }

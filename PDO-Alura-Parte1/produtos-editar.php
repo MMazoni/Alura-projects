@@ -1,7 +1,9 @@
 <?php require_once 'global.php' ?>
 <?php
 try {
-    $lista = Categoria::listar();
+    $id = $_GET['id'];
+    $produto = new Produto($id);
+    $listaCategoria = Categoria::listar();
 } catch(Exception $e) {
     Erro::trataErro($e);
 }
@@ -13,26 +15,34 @@ try {
     </div>
 </div>
 
-<form action="#" method="post">
+<form action="produtos-editar-post.php" method="post">
+<input type="hidden" name="id" value="<?= $produto->id ?>">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="form-group">
                 <label for="nome">Nome do Produto</label>
-                <input type="text" name="nome" value="O Senhor dos Aneis" class="form-control" placeholder="Nome do Produto" required>
+                <input type="text" name="nome" value="<?= $produto->nome ?>" class="form-control" placeholder="Nome do Produto" required>
             </div>
             <div class="form-group">
                 <label for="preco">Preço da Produto</label>
-                <input type="number" name="preco" value="88.55" step="0.01" min="0" class="form-control" placeholder="Preço do Produto" required>
+                <input type="number" name="preco" value="<?= $produto->preco ?>" step="0.01" min="0" class="form-control" placeholder="Preço do Produto" required>
             </div>
             <div class="form-group">
                 <label for="quantidade">Quantidade do Produto</label>
-                <input type="number" name="quantidade" value="8" min="0" class="form-control" placeholder="Quantidade do Produto" required>
+                <input type="number" name="quantidade" value="<?= $produto->quantidade ?>" min="0" class="form-control" placeholder="Quantidade do Produto" required>
             </div>
             <div class="form-group">
                 <label for="nome">Categoria do Produto</label>
                 <select name="categoria_id" class="form-control">
-                    <option value="1" selected>Livros</option>
-                    <option value="1">Revistas</option>
+                    <?php $selected = '' ?>
+                    <?php foreach ($listaCategoria as $linha) : ?>
+                    <?php if ($linha['id'] === $produto->categoria_id) {
+                        $selected = 'selected';
+                    }
+                    ?>
+                    <option value="<?= $linha['id']?>" <?= $selected ?>><?= $linha['nome'] ?></option>
+                    <?php $selected = '' ?>
+                    <?php endforeach ?>
                 </select>
             </div>
             <input type="submit" class="btn btn-success btn-block" value="Salvar">

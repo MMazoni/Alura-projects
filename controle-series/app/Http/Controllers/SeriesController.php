@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Serie;
 use Illuminate\Http\Request;
+use App\Services\CriadorDeSerie;
 use App\Http\Requests\SeriesFormRequest;
+use App\Services\RemovedorDeSerie;
 
 class SeriesController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $series = serie::query()
         ->orderBy('nome')
         ->get();
@@ -17,34 +20,37 @@ class SeriesController extends Controller
         return view('series.index', compact('series', 'mensagem'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('series.create');
     }
 
-    public function store(SeriesFormRequest $request){
+    public function store(SeriesFormRequest $request, CriadorDeSerie $criadorDeSerie)
+    {
 
-        $serie = Serie::create(['nome' => $request->nome]);
-        $qtd_temporadas = $request->qtd_temporada;
-        for ($i = 1; $i < $qtd_temporadas ; $i++) { 
-            $temporada = $serie->temporadas()->create(['numero' => $i]);
-            for ($j = 1; $j <= $request->ep_por_temporada; $j++) { 
-                $temporada->episodios()->create(['numero' => $j]);
-            }
-        }
+        $serie = $criadorDeSerie->criarSerie(
+            $request->nome,
+            $request->qtd_temporada,
+            $request->ep_por_temporada
+        );
+
 
         $request->session()->flash(
             'mensagem',
-            "Série {$serie->id} e {$serie->qtd_temporada} temporadas e episódios criados com sucesso"
+            "Série n°{$serie->id}, {$request->qtd_temporada} temporadas e episódios criados com sucesso"
         );
 
         return redirect()->route('listar_series');
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request, RemovedorDeSerie $removedorDeSerie)
+    {
+        $nomeSerie = $removedorDeSerie->removerSerie($request->id);
+
         Serie::destroy($request->id);
         $request->session()->flash(
             'mensagem',
-            "Série removida com sucesso"
+            "Série $nomeSerie removida com sucesso"
         );
 
         return redirect()->route('listar_series');

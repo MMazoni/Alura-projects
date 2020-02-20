@@ -4,8 +4,11 @@ require '../config.php';
 require '../src/Artigo.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo $_POST['titulo'];
-    echo $_POST['conteudo'];
+    $artigo = new Artigo($mysql);
+    $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
+
+    header('Location: /admin/index.php');
+    die();
 }
 
 ?>

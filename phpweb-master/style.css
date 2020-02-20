@@ -22,14 +22,14 @@ ul {
   padding: 0;
 }
 
-#artigo-admin {
+.artigo-admin {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
-#artigo-admin:hover {
+.artigo-admin:hover {
   background-color: #cccccc;
 }
 

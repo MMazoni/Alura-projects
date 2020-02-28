@@ -9,6 +9,16 @@
     <title>Controlador de Series</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light mb-2 d-flex justify-content-between" style="background-color: #e9ecef;">
+        <a class="navbar-brand" href="{{ route('listar_series') }}">Home</a>
+        @auth
+            <a href="/sair" class="text-danger">Sair</a>
+        @endauth
+
+        @guest
+            <a href="/entrar">Entrar</a>
+        @endguest
+    </nav>
     <div class="container">
         <div class="jumbotron">
             <h1>@yield('cabecalho')</h1>
